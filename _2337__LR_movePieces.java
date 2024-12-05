@@ -8,10 +8,12 @@ public class _2337__LR_movePieces {
     public boolean canChange(String start, String target) {
        int i=0,j=0;
         int n=start.length();
+
        
             if (!start.replace("_", "").equals(target.replace("_", ""))) {
         return false;
     }
+
           while(i<n || j<n)
           {
             while(i<n && start.charAt(i)=='_'  )
@@ -24,7 +26,9 @@ public class _2337__LR_movePieces {
             }
             if(i==n || j==n)
             {
-                return i==n && j==n;
+
+                 return i==n && j==n;
+
             }
             if(start.charAt(i)!=target.charAt(j))
             {
@@ -41,6 +45,7 @@ public class _2337__LR_movePieces {
             i++;
             j++;
           }
+
           return true;
     }
 public static void main(String[] args) {
