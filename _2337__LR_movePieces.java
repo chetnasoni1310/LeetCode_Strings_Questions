@@ -6,27 +6,25 @@ import java.util.*;
 public class _2337__LR_movePieces {
 
     public boolean canChange(String start, String target) {
-        int i=0,j=0;
+       int i=0,j=0;
         int n=start.length();
-        String filteredStart=start.replace("_","");
-          String filteredTarget=start.replace("_","");
-          if(filteredStart !=filteredTarget)
+       
+            if (!start.replace("_", "").equals(target.replace("_", ""))) {
+        return false;
+    }
+          while(i<n || j<n)
           {
-            return false;
-          }
-          while(i<n && j<n)
-          {
-            while(start.charAt(i)=='_' && i<n)
+            while(i<n && start.charAt(i)=='_'  )
             {
                 i++;
             }
-             while(target.charAt(j)=='_' && j<n)
+             while(j<n && target.charAt(j)=='_' )
             {
                 j++;
             }
             if(i==n || j==n)
             {
-                break;
+                return i==n && j==n;
             }
             if(start.charAt(i)!=target.charAt(j))
             {
@@ -43,15 +41,7 @@ public class _2337__LR_movePieces {
             i++;
             j++;
           }
-          while(i<n && start.charAt(i)=='_')
-          {
-            i++;
-          }
-          while(j<n && start.charAt(j)=='_')
-          {
-            j++;
-          }
-          return i==n && j==n;
+          return true;
     }
 public static void main(String[] args) {
 
